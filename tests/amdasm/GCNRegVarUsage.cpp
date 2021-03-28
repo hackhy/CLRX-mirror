@@ -1843,6 +1843,64 @@ b1:     .rvlin va[3:6]
         },
         true, ""
     },
+    {   /* 29.1: V_FMAC_F32 */
+        ".gpu gfx908\n"
+        ".regvar rax:v, rbx:v, rex:v\n"
+        "v_fmac_f32  rex, rax, rbx\n"
+        "v_fmac_f32  v47, v45, v24\n"
+        "v_fmac_f32  rex, rax, rbx vop3\n"
+        "v_fmac_f32  v47, v45, v24 vop3\n",
+        {
+            // v_fmac_f32  rex, rax, rbx
+            { 0, "rex", 0, 1, GCNFIELD_VOP_VDST, ASMRVU_WRITE|ASMRVU_READ, 1 },
+            { 0, "rax", 0, 1, GCNFIELD_VOP_SRC0, ASMRVU_READ, 1 },
+            { 0, "rbx", 0, 1, GCNFIELD_VOP_VSRC1, ASMRVU_READ, 1 },
+            // v_fmac_f32  v46, v42, v22
+            { 4, nullptr, 256+47, 256+48, GCNFIELD_VOP_VDST,
+                        ASMRVU_WRITE|ASMRVU_READ, 0 },
+            { 4, nullptr, 256+45, 256+46, GCNFIELD_VOP_SRC0, ASMRVU_READ, 0 },
+            { 4, nullptr, 256+24, 256+25, GCNFIELD_VOP_VSRC1, ASMRVU_READ, 0 },
+            // v_fmac_f32  rex, rax, rbx vop3
+            { 8, "rex", 0, 1, GCNFIELD_VOP3_VDST, ASMRVU_WRITE|ASMRVU_READ, 1 },
+            { 8, "rax", 0, 1, GCNFIELD_VOP3_SRC0, ASMRVU_READ, 1 },
+            { 8, "rbx", 0, 1, GCNFIELD_VOP3_SRC1, ASMRVU_READ, 1 },
+            // v_fmac_f32  v46, v42, v22 vop3
+            { 16, nullptr, 256+47, 256+48, GCNFIELD_VOP3_VDST,
+                        ASMRVU_WRITE|ASMRVU_READ, 0 },
+            { 16, nullptr, 256+45, 256+46, GCNFIELD_VOP3_SRC0, ASMRVU_READ, 0 },
+            { 16, nullptr, 256+24, 256+25, GCNFIELD_VOP3_SRC1, ASMRVU_READ, 0 }
+        },
+        true, ""
+    },
+    {   /* 29.2: V_FMAC_F32 */
+        ".gpu gfx908:sramecc+:xnack-\n"
+        ".regvar rax:v, rbx:v, rex:v\n"
+        "v_fmac_f32  rex, rax, rbx\n"
+        "v_fmac_f32  v47, v45, v24\n"
+        "v_fmac_f32  rex, rax, rbx vop3\n"
+        "v_fmac_f32  v47, v45, v24 vop3\n",
+        {
+            // v_fmac_f32  rex, rax, rbx
+            { 0, "rex", 0, 1, GCNFIELD_VOP_VDST, ASMRVU_WRITE|ASMRVU_READ, 1 },
+            { 0, "rax", 0, 1, GCNFIELD_VOP_SRC0, ASMRVU_READ, 1 },
+            { 0, "rbx", 0, 1, GCNFIELD_VOP_VSRC1, ASMRVU_READ, 1 },
+            // v_fmac_f32  v46, v42, v22
+            { 4, nullptr, 256+47, 256+48, GCNFIELD_VOP_VDST,
+                        ASMRVU_WRITE|ASMRVU_READ, 0 },
+            { 4, nullptr, 256+45, 256+46, GCNFIELD_VOP_SRC0, ASMRVU_READ, 0 },
+            { 4, nullptr, 256+24, 256+25, GCNFIELD_VOP_VSRC1, ASMRVU_READ, 0 },
+            // v_fmac_f32  rex, rax, rbx vop3
+            { 8, "rex", 0, 1, GCNFIELD_VOP3_VDST, ASMRVU_WRITE|ASMRVU_READ, 1 },
+            { 8, "rax", 0, 1, GCNFIELD_VOP3_SRC0, ASMRVU_READ, 1 },
+            { 8, "rbx", 0, 1, GCNFIELD_VOP3_SRC1, ASMRVU_READ, 1 },
+            // v_fmac_f32  v46, v42, v22 vop3
+            { 16, nullptr, 256+47, 256+48, GCNFIELD_VOP3_VDST,
+                        ASMRVU_WRITE|ASMRVU_READ, 0 },
+            { 16, nullptr, 256+45, 256+46, GCNFIELD_VOP3_SRC0, ASMRVU_READ, 0 },
+            { 16, nullptr, 256+24, 256+25, GCNFIELD_VOP3_SRC1, ASMRVU_READ, 0 }
+        },
+        true, ""
+    },
     {   /* 30: S_ATOMIC_* (GFX9) */
         ".gpu gfx900\n"
         ".regvar rax:v, rbx:v, rex:v\n"
