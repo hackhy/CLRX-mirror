@@ -80,6 +80,7 @@ enum class GPUDeviceType: cxbyte
     GFX905,
     GFX906,
     GFX907,
+    GFX908,
     GFX1000,
     GFX1010,
     GFX1011,
