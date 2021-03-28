@@ -979,7 +979,8 @@ static const CL2GPUDeviceCodeEntry cl2_2580GpuDeviceCodeTable[] =
     { 26, GPUDeviceType::GFX904 },
     { 27, GPUDeviceType::GFX905 },
     { 28, GPUDeviceType::GFX906 },
-    { 29, GPUDeviceType::GFX907 }
+    { 29, GPUDeviceType::GFX907 },
+    { 30, GPUDeviceType::GFX908 }
 };
 
 struct CLRX_INTERNAL CL2GPUCodeTable
@@ -1026,7 +1027,8 @@ static const GPUDeviceType gpuGFX9SteppingTable[] =
     GPUDeviceType::GFX904,
     GPUDeviceType::GFX905,
     GPUDeviceType::GFX906,
-    GPUDeviceType::GFX907
+    GPUDeviceType::GFX907,
+    GPUDeviceType::GFX908
 };
 
 template<typename Types>
@@ -1175,7 +1177,8 @@ static const cxuint cl2GPUDeviceTypeMinDriverVersion[] =
     252700U, // GFX904,
     252700U, // GFX905,
     258000U, // GFX906,
-    258000U  // GFX907,
+    258000U,  // GFX907,
+    258000U  // GFX908,
 };
 
 cxuint AmdCL2MainGPUBinaryBase::determineMinDriverVersionForGPUDeviceType(
