@@ -65,6 +65,7 @@ static const char* gpuDeviceNameTable[gpuDeviceTableSize] =
     "GFX905",
     "GFX906",
     "GFX907",
+    "GFX908",
     "GFX1000",
     "GFX1010",
     "GFX1011"
@@ -98,6 +99,8 @@ lowerCaseGpuDeviceEntryTable[] =
     { "gfx905", GPUDeviceType::GFX905 },
     { "gfx906", GPUDeviceType::GFX906 },
     { "gfx907", GPUDeviceType::GFX907 },
+    { "gfx908", GPUDeviceType::GFX908 },    
+    { "gfx908:sramecc+:xnack-", GPUDeviceType::GFX908 },    
     { "goose", GPUDeviceType::GOOSE },
     { "hainan", GPUDeviceType::HAINAN },
     { "hawaii", GPUDeviceType::HAWAII },
@@ -162,7 +165,8 @@ static const GPUArchitecture gpuDeviceArchTable[gpuDeviceTableSize] =
     GPUArchitecture::GCN1_4, // GFX904
     GPUArchitecture::GCN1_4, // GFX905
     GPUArchitecture::GCN1_4_1, // GFX906
-    GPUArchitecture::GCN1_4_1, // GFX907
+    GPUArchitecture::GCN1_4_1, // GFX907    
+    GPUArchitecture::GCN1_4_1, // GFX908  
     GPUArchitecture::GCN1_5, // GFX1000
     GPUArchitecture::GCN1_5, // GFX1010
     GPUArchitecture::GCN1_5_1, // GFX1011
@@ -181,25 +185,26 @@ static const char* gpuArchitectureNameTable[7] =
 
 /* three names for every architecture (GCN, GFX?, Shortcut) used by recognizing
  * architecture by name */
-static const char* gpuArchitectureNameTable2[21] =
+static const char* gpuArchitectureNameTable2[22] =
 {
     "GCN1.0", "GFX6", "SI",
     "GCN1.1", "GFX7", "CI",
     "GCN1.2", "GFX8", "VI",
     "GCN1.4", "GFX9", "Vega",
-    "GCN1.4.1", "GFX906", "Vega20",
+    "GCN1.4.1", "GFX906", "Vega20", "GFX908",
     "GCN1.5", "GFX10", "Navi",
     "GCN1.5.1", "GFX1011", "NaviDL",
 };
 
 /// lowest device for architecture
-static const GPUDeviceType gpuLowestDeviceFromArchTable[7] =
+static const GPUDeviceType gpuLowestDeviceFromArchTable[8] =
 {
     GPUDeviceType::CAPE_VERDE,
     GPUDeviceType::BONAIRE,
     GPUDeviceType::ICELAND,
     GPUDeviceType::GFX900,
     GPUDeviceType::GFX906,
+    GPUDeviceType::GFX908,
     GPUDeviceType::GFX1000,
     GPUDeviceType::GFX1011,
 };
@@ -445,7 +450,8 @@ static const AMDGPUArchVersion galliumGpuArchVersionTbl[] =
     { 9, 0, 4 }, // GPUDeviceType::GFX904
     { 9, 0, 5 }, // GPUDeviceType::GFX905
     { 9, 0, 6 }, // GPUDeviceType::GFX906
-    { 9, 0, 7 }, // GPUDeviceType::GFX907
+    { 9, 0, 7 }, // GPUDeviceType::GFX907    
+    { 9, 0, 8 }, // GPUDeviceType::GFX908
     { 10, 0, 0 }, // GPUDeviceType::GFX1000
     { 10, 1, 0 }, // GPUDeviceType::GFX1010
     { 10, 1, 1 } // GPUDeviceType::GFX1011
@@ -483,7 +489,8 @@ static const AMDGPUArchVersion rocmGpuArchVersionTbl[] =
     { 9, 0, 4 }, // GPUDeviceType::GFX904
     { 9, 0, 5 }, // GPUDeviceType::GFX905
     { 9, 0, 6 }, // GPUDeviceType::GFX906
-    { 9, 0, 7 }, // GPUDeviceType::GFX907
+    { 9, 0, 7 }, // GPUDeviceType::GFX907    
+    { 9, 0, 8 }, // GPUDeviceType::GFX908
     { 10, 0, 0 }, // GPUDeviceType::GFX1000
     { 10, 1, 0 }, // GPUDeviceType::GFX1010
     { 10, 1, 1 } // GPUDeviceType::GFX1011
@@ -522,6 +529,7 @@ static const AMDGPUArchVersion amdCL2GpuArchVersionTbl[] =
     { 9, 0, 5 }, // GPUDeviceType::GFX905
     { 9, 0, 6 }, // GPUDeviceType::GFX906
     { 9, 0, 7 }, // GPUDeviceType::GFX907
+    { 9, 0, 8 }, // GPUDeviceType::GFX908
     { 10, 0, 0 }, // GPUDeviceType::GFX1000
     { 10, 1, 0 }, // GPUDeviceType::GFX1010
     { 10, 1, 1 }, // GPUDeviceType::GFX1011
@@ -569,6 +577,7 @@ static const AMDGPUArchVersionEntry amdGpuArchVersionEntriesTbl[] =
     { 9, 0, 5, GPUDeviceType::GFX905 },
     { 9, 0, 6, GPUDeviceType::GFX906 },
     { 9, 0, 7, GPUDeviceType::GFX907 },
+    { 9, 0, 8, GPUDeviceType::GFX908 },
     { 10, 0, 0, GPUDeviceType::GFX1000 },
     { 10, 1, 0, GPUDeviceType::GFX1010 },
     { 10, 1, 1, GPUDeviceType::GFX1011 }
