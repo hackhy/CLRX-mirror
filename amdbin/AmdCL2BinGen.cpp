@@ -185,7 +185,7 @@ static const ArgTypeSizes argTypeSizesTable[] =
 // tables with GPU device codes for specific driver version
 // for almost cases are matches.
 
-static const uint32_t gpuDeviceCodeTable[33] =
+static const uint32_t gpuDeviceCodeTable[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -217,12 +217,13 @@ static const uint32_t gpuDeviceCodeTable[33] =
     UINT_MAX, // GPUDeviceType::GFX905
     UINT_MAX, // GPUDeviceType::GFX906
     UINT_MAX, // GPUDeviceType::GFX907
+    UINT_MAX, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
 };
 
-static const uint32_t gpuDeviceCodeTable15_7[33] =
+static const uint32_t gpuDeviceCodeTable15_7[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -253,13 +254,14 @@ static const uint32_t gpuDeviceCodeTable15_7[33] =
     UINT_MAX, // GPUDeviceType::GFX904
     UINT_MAX, // GPUDeviceType::GFX905
     UINT_MAX, // GPUDeviceType::GFX906
-    UINT_MAX, // GPUDeviceType::GFX907
+    UINT_MAX, // GPUDeviceType::GFX907    
+    UINT_MAX, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
 };
 
-static const uint32_t gpuDeviceCodeTable16_3[33] =
+static const uint32_t gpuDeviceCodeTable16_3[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -291,12 +293,13 @@ static const uint32_t gpuDeviceCodeTable16_3[33] =
     UINT_MAX, // GPUDeviceType::GFX905
     UINT_MAX, // GPUDeviceType::GFX906
     UINT_MAX, // GPUDeviceType::GFX907
+    UINT_MAX, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
 };
 
-static const uint32_t gpuDeviceCodeTableGPUPRO[33] =
+static const uint32_t gpuDeviceCodeTableGPUPRO[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -328,12 +331,13 @@ static const uint32_t gpuDeviceCodeTableGPUPRO[33] =
     UINT_MAX, // GPUDeviceType::GFX905
     UINT_MAX, // GPUDeviceType::GFX906
     UINT_MAX, // GPUDeviceType::GFX907
+    UINT_MAX, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
 };
 
-static const uint32_t gpuDeviceCodeTable2236[33] =
+static const uint32_t gpuDeviceCodeTable2236[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -365,12 +369,13 @@ static const uint32_t gpuDeviceCodeTable2236[33] =
     UINT_MAX, // GPUDeviceType::GFX905
     UINT_MAX, // GPUDeviceType::GFX906
     UINT_MAX, // GPUDeviceType::GFX907
+    UINT_MAX, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
 };
 
-static const uint32_t gpuDeviceCodeTable2264[33] =
+static const uint32_t gpuDeviceCodeTable2264[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -402,12 +407,13 @@ static const uint32_t gpuDeviceCodeTable2264[33] =
     UINT_MAX, // GPUDeviceType::GFX905
     UINT_MAX, // GPUDeviceType::GFX906
     UINT_MAX, // GPUDeviceType::GFX907
+    UINT_MAX, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
 };
 
-static const uint32_t gpuDeviceCodeTable2348[33] =
+static const uint32_t gpuDeviceCodeTable2348[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -439,12 +445,13 @@ static const uint32_t gpuDeviceCodeTable2348[33] =
     UINT_MAX, // GPUDeviceType::GFX905
     UINT_MAX, // GPUDeviceType::GFX906
     UINT_MAX, // GPUDeviceType::GFX907
+    UINT_MAX, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
 };
 
-static const uint32_t gpuDeviceCodeTable2442[33] =
+static const uint32_t gpuDeviceCodeTable2442[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -476,12 +483,13 @@ static const uint32_t gpuDeviceCodeTable2442[33] =
     UINT_MAX, // GPUDeviceType::GFX905
     UINT_MAX, // GPUDeviceType::GFX906
     UINT_MAX, // GPUDeviceType::GFX907
+    UINT_MAX, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
 };
 
-static const uint32_t gpuDeviceCodeTable2482[33] =
+static const uint32_t gpuDeviceCodeTable2482[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -513,12 +521,13 @@ static const uint32_t gpuDeviceCodeTable2482[33] =
     UINT_MAX, // GPUDeviceType::GFX905
     UINT_MAX, // GPUDeviceType::GFX906
     UINT_MAX, // GPUDeviceType::GFX907
+    UINT_MAX, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
 };
 
-static const uint32_t gpuDeviceCodeTable2527[33] =
+static const uint32_t gpuDeviceCodeTable2527[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -550,12 +559,13 @@ static const uint32_t gpuDeviceCodeTable2527[33] =
     27, // GPUDeviceType::GFX905
     UINT_MAX, // GPUDeviceType::GFX906
     UINT_MAX, // GPUDeviceType::GFX907
+    UINT_MAX, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
 };
 
-static const uint32_t gpuDeviceCodeTable2580[33] =
+static const uint32_t gpuDeviceCodeTable2580[34] =
 {
     UINT_MAX, // GPUDeviceType::CAPE_VERDE
     UINT_MAX, // GPUDeviceType::PITCAIRN
@@ -587,6 +597,7 @@ static const uint32_t gpuDeviceCodeTable2580[33] =
     27, // GPUDeviceType::GFX905
     28, // GPUDeviceType::GFX906
     29, // GPUDeviceType::GFX907
+    30, // GPUDeviceType::GFX908
     UINT_MAX, // GPUDeviceType::GFX1000
     UINT_MAX, // GPUDeviceType::GFX1010
     UINT_MAX // GPUDeviceType::GFX1011
