@@ -209,6 +209,14 @@ int main(int argc, const char** argv)
             std::cerr << ex.what() << std::endl;
             retVal = 1;
         }
+    for (cxuint i = 0; encGCN141OpcodeCases[i].input!=nullptr; i++)
+        try
+        { testEncGCNOpcodes(i, encGCN141OpcodeCases[i], GPUDeviceType::GFX908, 0); }
+        catch(const std::exception& ex)
+        {
+            std::cerr << ex.what() << std::endl;
+            retVal = 1;
+        }  
     for (cxuint i = 0; encGCN15OpcodeCases[i].input!=nullptr; i++)
         try
         { testEncGCNOpcodes(i, encGCN15OpcodeCases[i], GPUDeviceType::GFX1010, 0); }
