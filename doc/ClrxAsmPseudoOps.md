@@ -106,7 +106,7 @@ Syntax: .arch ARCHITECTURE
 
 This pseudo-operation should to be at begin of source. Set GPU architecture.
 One of following architecture can be set:
-SI, VI, CI, VEGA, VEGA20, Navi, NaviDL, GFX6, GFX7, GFX8, GFX9, GFX906, GFX10, GFX1011,
+SI, VI, CI, VEGA, VEGA20, Navi, NaviDL, GFX6, GFX7, GFX8, GFX9, GFX906, GFX908, GFX10, GFX1011,
 GCN1.0, GCN1.1, GCN1.2, GCN1.4, GCN1.4.1, GCN1.5, GCN1.5.1.
 
 ### .ascii
@@ -396,6 +396,7 @@ Id | Description
  4 | VEGA20 (GFX906)
  5 | NAVI (RX 5700)
  6 | NAVI DL
+ 7 | CDNA (GFX908)
 
 ### .get_format
 
@@ -451,7 +452,8 @@ Id  | Description
  29 | gfx907 (Radeon VEGA 20 ???)
  30 | gfx1000
  31 | gfx1010
- 32 | gfx1011
+ 32 | gfx1011 
+ 33 | gfx908 (MI100)
 
 ### .get_policy
 
@@ -483,7 +485,7 @@ Syntax: .gpu GPUDEVICE
 This pseudo-operation should to be at begin of source. Set GPU device.
 One of following device type can be set:
 Baffin, Bonaire, CapeVerde, Carrizo, Dummy, Ellesmere, Fiji, GFX700, GFX701, GFX801,
-GFX802, GFX803, GFX804, GFX900, GFX901, GFX902, GFX903, GFX904, GFX905, GFX906, GFX907,
+GFX802, GFX803, GFX804, GFX900, GFX901, GFX902, GFX903, GFX904, GFX905, GFX906, GFX907, GFX908
 Goose, Hainan, Hawaii, Horse, Iceland, Kalindi, Mullins, Oland, Pitcairn, Polaris10,
 Polaris11, Polaris12, Polaris20, Polaris21, Polaris22, Raven, Spectre, Spooky, Stoney,
 Tahiti, Tonga, Topaz, Vega10, Vega11, Vega12, Vega20, GFX1000, GFX1010, GFX1011, Navi10.
