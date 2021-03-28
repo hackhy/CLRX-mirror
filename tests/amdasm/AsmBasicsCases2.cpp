@@ -2463,6 +2463,18 @@ aa2=6
         { }, { }, { { ".", 0, 0, 0, true, false, false, 0, 0 } }, true,
         "", "isGCN1.4\n",
     },
+    /* 88.1 - GPU arch check (ifarch) */
+    {   ".amdcl2\n.gpu vega20\n"
+        ".ifarch GCN1.4\n"
+        ".print \"isGCN1.4\"\n"
+        ".endif\n"
+        ".ifnarch GCN1.4\n"
+        ".print \"isNotGCN1.4\"\n"
+        ".endif\n",
+        BinaryFormat::AMDCL2, GPUDeviceType::GFX908, false,
+        { }, { }, { { ".", 0, 0, 0, true, false, false, 0, 0 } }, true,
+        "", "isGCN1.4\n",
+    },
     /* 89 - GPU arch check (ifarch) */
     {   ".amdcl2\n.gpu vega10\n"
         ".ifarch GCN1.4.1\n"
@@ -2484,6 +2496,18 @@ aa2=6
         ".print \"isNotGCN1.4.1\"\n"
         ".endif\n",
         BinaryFormat::AMDCL2, GPUDeviceType::GFX906, false,
+        { }, { }, { { ".", 0, 0, 0, true, false, false, 0, 0 } }, true,
+        "", "isGCN1.4.1\n",
+    },
+    /* 90.1 - GPU arch check (ifarch) */
+    {   ".amdcl2\n.gpu vega20\n"
+        ".ifarch GCN1.4.1\n"
+        ".print \"isGCN1.4.1\"\n"
+        ".endif\n"
+        ".ifnarch GCN1.4.1\n"
+        ".print \"isNotGCN1.4.1\"\n"
+        ".endif\n",
+        BinaryFormat::AMDCL2, GPUDeviceType::GFX908, false,
         { }, { }, { { ".", 0, 0, 0, true, false, false, 0, 0 } }, true,
         "", "isGCN1.4.1\n",
     },
