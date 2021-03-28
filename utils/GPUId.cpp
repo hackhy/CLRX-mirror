@@ -31,7 +31,7 @@ GPUIdException::GPUIdException(const std::string& message) : Exception(message)
 { }
 
 // length of GPU device table (number of recognized GPU devices)
-static const size_t gpuDeviceTableSize = 33;
+static const size_t gpuDeviceTableSize = 34;
 
 static const char* gpuDeviceNameTable[gpuDeviceTableSize] =
 {
